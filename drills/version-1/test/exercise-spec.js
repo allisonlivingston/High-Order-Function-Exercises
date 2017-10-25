@@ -1,7 +1,7 @@
 var assert = require('assert')
 var exercise = require('../src/exercise')
 
-describe('Store1 Exercises', function () {
+describe('Version-1 Exercises', function () {
   describe('#accessesingData1()', function () {
     it('returns \'4.63\'', function () {
       assert.equal(exercise.accessesingData1(), '4.63')

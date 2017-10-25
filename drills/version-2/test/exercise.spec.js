@@ -1,7 +1,7 @@
 var assert = require('assert')
 var exercise = require('../src/exercise')
 
-describe('Store2 Exercises', function () {
+describe('Version-2 Exercises', function () {
   describe('#accessesingData1()', function () {
     it('returns array of dates', function () {
       assert.deepEqual(exercise.accessesingData1(), ['2015-01-10', '2015-01-10'])

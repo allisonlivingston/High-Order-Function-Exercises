@@ -1,12 +1,12 @@
 var assert = require('assert')
-var exercise = require('./exercise')
+var exercise = require('../src/exercise')
 
-describe('Store3 Exercises', function() {
+describe('Version 3 Exercises', function () {
   describe('#accessesingData1()', function () {
     it('returns object data', function () {
       assert.deepEqual(exercise.accessesingData1(), {
-          'cost': 7.89,
-          'quantity': 3
+        'cost': 7.89,
+        'quantity': 3
       })
     })
   })
