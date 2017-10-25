@@ -1,5 +1,5 @@
 ### Instructions
-- Run `npm install` in the version1 directory.
+- Run `npm install` in the version-1 directory.
 - Write your code as functions that return the result
 - In the version-1 directory, run ```npm test``` on the command line.
 
