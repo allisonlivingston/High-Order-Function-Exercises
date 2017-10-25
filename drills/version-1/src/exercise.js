@@ -1,4 +1,4 @@
-var version1 = require('./data/version1-data.js')
+let version1 = require('../data/version1-data.js')
 
 // *********** ACCESSING DATA *********** \\
 
