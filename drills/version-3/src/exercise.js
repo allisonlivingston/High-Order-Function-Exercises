@@ -1,27 +1,32 @@
-// Hint: Don't forget to require in your data! Refer to version1 or version2 exercise.js files on how to do this.
+// Hint: Don't forget to require in your data! Refer to store1 or store2 exercise.js files on how to do this.
+var version3 = require('../data/version3-data.js');
 
-// ()()()()() ACCESSING DATA ()()()()()\\
+//()()()()() ACCESSING DATA ()()()()()\\
 
 // Return Berry Bites data for version3 on January 7.
-function accessesingData1 () {
-
+function accessesingData1() {
+  return version3[1]['inventory sold']['Berry Bites']
 }
 
 // Return how many Mint Wafers were sold on January 9th
-function accessesingData2 () {
-
+function accessesingData2() {
+  return version3[3]['inventory sold']['Mint Wafers']['quantity']
 }
 
 // Return total number of dates included in the dataset.
-function accessesingData3 () {
-
+function accessesingData3() {
+  return version3.length
 }
 
-// ()()()()() LOOPING OVER DATA ()()()()()\\
+//()()()()() LOOPING OVER DATA ()()()()()\\
 
 // Create a loop to iterate over the sale data from version3. Use this loop to return an array of dates contained in the sale data.
-function loopingData1 () {
-
+function loopingData1() {
+  let dates = []
+  for (let data of version3){
+    dates.push(data.date)
+  }
+  return dates
 }
 
 // Use `Object.keys()` to loop over the inventory sold for January 10th in version3. While iterating over the data, create an object containing each candy's name and price. Return the result.
@@ -31,21 +36,41 @@ function loopingData1 () {
 //   'Mint Wafers': 1.40,
 //   ...
 // }
-function loopingData2 () {
-
+function loopingData2() {
+  let result = {}
+  var inventory = version3[4]['inventory sold']
+  for (let name of Object.keys(inventory)){
+    result[name] = inventory[name]['cost']
+  }
+  return result
 }
+
 
 // Create a loop to iterate over the whole version3 variable to find out how many Peanut Butter Buttered Peanuts were sold over all dates. Return the result.
-function loopingData3 () {
-
+function loopingData3() {
+  let count = 0;
+  for(let data of version3){
+    for(let inventory in data['inventory sold']){
+      if (inventory === 'Peanut Butter Buttered Peanuts'){
+        count++
+      }
+    }
+  }
+  return count
 }
 
-// ()()()()() CHALLENGE ()()()()()\\
+//()()()()() CHALLENGE ()()()()()\\
 
 // Determine how much money version3 made on January 9th and return the result fixed to two decimal points
-function challenge1 () {
-
+function challenge1() {
+  let sum = 0;
+  let inventory = version3[3]['inventory sold']
+  for(let name in inventory) {
+    sum += inventory[name]['cost'] * inventory[name]['quantity']
+  }
+  return sum.toFixed(2)
 }
+
 
 module.exports = {
   accessesingData1,
