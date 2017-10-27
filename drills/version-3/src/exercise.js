@@ -1,35 +1,35 @@
 // Hint: Don't forget to require in your data! Refer to store1 or store2 exercise.js files on how to do this.
-var version3 = require('../data/version3-data.js')
+var candyStore3 = require('../data/candyStore3-data.js')
 
 // ()()()()() ACCESSING DATA ()()()()()\\
 
-// Return Berry Bites data for version3 on January 7.
+// Return Berry Bites data for candyStore3 on January 7.
 function accessesingData1 () {
-  return version3[1]['inventory sold']['Berry Bites']
+  return candyStore3[1]['inventory sold']['Berry Bites']
 }
 
 // Return how many Mint Wafers were sold on January 9th
 function accessesingData2 () {
-  return version3[3]['inventory sold']['Mint Wafers']['quantity']
+  return candyStore3[3]['inventory sold']['Mint Wafers']['quantity']
 }
 
 // Return total number of dates included in the dataset.
 function accessesingData3 () {
-  return version3.length
+  return candyStore3.length
 }
 
 // ()()()()() LOOPING OVER DATA ()()()()()\\
 
-// Create a loop to iterate over the sale data from version3. Use this loop to return an array of dates contained in the sale data.
+// Create a loop to iterate over the sale data from candyStore3. Use this loop to return an array of dates contained in the sale data.
 function loopingData1 () {
   let dates = []
-  for (let data of version3) {
+  for (let data of candyStore3) {
     dates.push(data.date)
   }
   return dates
 }
 
-// Use `Object.keys()` to loop over the inventory sold for January 10th in version3. While iterating over the data, create an object containing each candy's name and price. Return the result.
+// Use `Object.keys()` to loop over the inventory sold for January 10th in candyStore3. While iterating over the data, create an object containing each candy's name and price. Return the result.
 // Example:
 // {
 //   'Dark Chocolate Crunchies': 1.30,
@@ -38,17 +38,17 @@ function loopingData1 () {
 // }
 function loopingData2 () {
   let result = {}
-  var inventory = version3[4]['inventory sold']
+  var inventory = candyStore3[4]['inventory sold']
   for (let name of Object.keys(inventory)) {
     result[name] = inventory[name]['cost']
   }
   return result
 }
 
-// Create a loop to iterate over the whole version3 variable to find out how many Peanut Butter Buttered Peanuts were sold over all dates. Return the result.
+// Create a loop to iterate over the whole candyStore3 variable to find out how many Peanut Butter Buttered Peanuts were sold over all dates. Return the result.
 function loopingData3 () {
   let count = 0
-  for (let data of version3) {
+  for (let data of candyStore3) {
     for (let inventory in data['inventory sold']) {
       if (inventory === 'Peanut Butter Buttered Peanuts') {
         count++
@@ -58,12 +58,11 @@ function loopingData3 () {
   return count
 }
 
-// ()()()()() CHALLENGE ()()()()()\\
 
-// Determine how much money version3 made on January 9th and return the result fixed to two decimal points
+// Determine how much money candyStore3 made on January 9th and return the result fixed to two decimal points
 function challenge1 () {
   let sum = 0
-  let inventory = version3[3]['inventory sold']
+  let inventory = candyStore3[3]['inventory sold']
   for (let name in inventory) {
     sum += inventory[name]['cost'] * inventory[name]['quantity']
   }

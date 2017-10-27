@@ -1,1 +1,1 @@
-- [ ] Tests pass
+- [ ] All tests are passing

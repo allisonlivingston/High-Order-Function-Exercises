@@ -1,4 +1,4 @@
-var version3 = [{
+var candyStore3 = [{
   'date': '2015-01-06',
   'inventory sold': {
     'Dark Chocolate Crunchies': {
@@ -160,4 +160,4 @@ var version3 = [{
   }
 }]
 
-module.exports = version3
+module.exports = candyStore3
