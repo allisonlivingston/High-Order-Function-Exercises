@@ -1,1 +1,1 @@
-[ ] Tests pass
+- [ ] Tests pass
