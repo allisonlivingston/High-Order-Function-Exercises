@@ -1,7 +1,7 @@
 {
   "name": "version-1",
   "version": "1.0.0",
-  "description": "- Run `npm install` in the version1 directory. - Write your code as functions that return the result - In the version-1 directory, run ```npm test``` on the command line.",
+  "description": "- Run `npm install` in the candyStore1 directory. - Write your code as functions that return the result - In the version-1 directory, run ```npm test``` on the command line.",
   "main": "exercise.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha"

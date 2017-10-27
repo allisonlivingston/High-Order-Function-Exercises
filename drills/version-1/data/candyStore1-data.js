@@ -1,4 +1,4 @@
-var version1 = {
+var candyStore1 = {
   '2015-01-06': [
         ['Dark Chocolate Crunchies', '4.39', 1],
         ['Mint Wafers', '1.19', 3],
@@ -31,4 +31,4 @@ var version1 = {
   ]
 }
 
-module.exports = version1
+module.exports = candyStore1
