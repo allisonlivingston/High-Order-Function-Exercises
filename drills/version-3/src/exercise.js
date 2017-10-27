@@ -58,7 +58,6 @@ function loopingData3 () {
   return count
 }
 
-// ()()()()() CHALLENGE ()()()()()\\
 
 // Determine how much money candyStore3 made on January 9th and return the result fixed to two decimal points
 function challenge1 () {
