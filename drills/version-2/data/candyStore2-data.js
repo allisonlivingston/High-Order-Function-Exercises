@@ -1,4 +1,4 @@
-var version2 = {
+var candyStore2 = {
   'inventory prices': {
     'Dark Chocolate Crunchies': 4.29,
     'Mint Wafers': 1.09,
@@ -19,4 +19,4 @@ var version2 = {
   }
 }
 
-module.exports = version2
+module.exports = candyStore2
