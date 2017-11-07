@@ -1,8 +1,8 @@
 All items required to pass
 
 * [ ] 3 passing tests
-* [ ] `getItemById` uses `filter` or `for`
-* [ ] `buildTransactions` uses `map`
-* [ ] `getTransactionsByItemDescription` uses `filter`
+* [ ] `getTotalItemSales` uses `reduce`
+* [ ] `addTotalSalesToItems` uses `map`
+* [ ] `addTotalValueToItems` uses `map`
 * [ ] Meaningful variable names
 * [ ] Proper indentation of all code
