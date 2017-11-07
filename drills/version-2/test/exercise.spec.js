@@ -1,57 +1,68 @@
-var assert = require('assert')
-var exercise = require('../src/exercise')
+var assert = require("assert")
+var exercise = require("../exercise")
 
-describe('Version-2 Exercises', function () {
-  describe('#accessesingData1()', function () {
-    it('returns array of dates', function () {
-      assert.deepEqual(exercise.accessesingData1(), ['2015-01-10', '2015-01-10'])
-    })
-  })
-  describe('#accessesingData2()', function () {
-    it('returns 2', function () {
-      assert.equal(exercise.accessesingData2(), 2)
-    })
-  })
-  describe('#updatingData1()', function () {
-    it('returns boolean', function () {
-      assert.deepEqual(exercise.updatingData1(), false)
-    })
-  })
-  describe('#updatingData2()', function () {
-    it('returns boolean', function () {
-      assert.deepEqual(exercise.updatingData2(), true)
-    })
-  })
-  describe('#loopingData1()', function () {
-    it('returns object with dates as key and quantity as value', function () {
-      var result = {
-        '2015-01-06': 2,
-        '2015-01-07': 1,
-        '2015-01-08': 2,
-        '2015-01-09': 2,
-        '2015-01-10': 2
-      }
-      assert.deepEqual(exercise.loopingData1(), result)
-    })
-  })
-  describe('#loopingData2()', function () {
-    it('returns date string', function () {
-      assert.equal(exercise.loopingData2(), '2015-01-10')
-    })
-  })
+describe("Version-2 Exercises", ()=>{
+    describe("#getItemById", ()=>{
+        const items = [{
+            id: 1,
+            description: "Dark Chocolate Crunchies",
+            price: 4.29
+        },{
+            id: 2,
+            description: "Mint Wafers",
+            price: 1.09
+        }];
+        it("returns an item based on ID", ()=>{
+            assert.deepEqual(exercise.getItemById(items, 1), items[0]);
+            assert.deepEqual(exercise.getItemById(items, 2), items[1]);
+        });
+    });
 
-  describe('#challenge1()', function () {
-    it('returns an object of candies and total revenue rounded to two numbers', function () {
-      var result = {
-        'Dark Chocolate Crunchies': '17.16',
-        'Mint Wafers': '4.36',
-        'Peppermint Poppers': '16.66',
-        'Peanut Butter Buttered Peanuts': '3.58',
-        'Berry Bites': '47.34',
-        'Caramel Twists': '4.50',
-        'Banana Bunches': '9.06'
-      }
-      assert.deepEqual(exercise.challenge1(), result)
-    })
-  })
+    describe("#buildTransactions", ()=>{
+        const items = [{
+            id: 1,
+            description: "Dark Chocolate Crunchies",
+            price: 4.29
+        },{
+            id: 2,
+            description: "Mint Wafers",
+            price: 1.09
+        }];
+        const sales = [{
+            itemId: 1,
+            quantity: 2
+        },{
+            itemId: 2,
+            quantity: 2
+        }];
+        it("builds transactions", ()=>{
+            assert.deepEqual(exercise.buildTransactions(sales, items), [{
+                itemId: 1,
+                description: "Dark Chocolate Crunchies",
+                price: 4.29,
+                quantity: 2,
+            },{
+                itemId: 2,
+                description: "Mint Wafers",
+                price: 1.09,
+                quantity: 2,
+            }]);
+        });
+    });
+    describe("#getTransactionsByItemDescription", ()=>{
+        const transactions = [{
+            description: "Dark Chocolate Crunchies"
+        },{
+            description: "Mint Wafers"
+        },{
+            description: "Mint Wafers"
+        }];
+        it("builds transactions", ()=>{
+            assert.deepEqual(exercise.getTransactionsByItemDescription(transactions, "Mint Wafers"), [{
+                description: "Mint Wafers",
+            },{
+                description: "Mint Wafers"
+            }]);
+        });
+    });
 })
