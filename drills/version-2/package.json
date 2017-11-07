@@ -1,18 +1,14 @@
 {
-  "name": "version-2",
+  "name": "candy-shop-version-2",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
+  "description": "Version 2 of the Candy Shop drills",
+  "main": "exercise.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "mocha"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Kyle Coberly",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "mocha": "^4.0.1"
   }
 }
