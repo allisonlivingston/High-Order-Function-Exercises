@@ -1,61 +1,129 @@
-var assert = require('assert')
-var exercise = require('../src/exercise')
+var assert = require("assert")
+var exercise = require("../exercise")
 
-describe('Version 3 Exercises', function () {
-  describe('#accessesingData1()', function () {
-    it('returns object data', function () {
-      assert.deepEqual(exercise.accessesingData1(), {
-        'cost': 7.89,
-        'quantity': 3
-      })
-    })
-  })
-  describe('#accessesingData2()', function () {
-    it('returns 3', function () {
-      assert.equal(exercise.accessesingData2(), 3)
-    })
-  })
-  describe('#accessesingData3()', function () {
-    it('returns 5', function () {
-      assert.equal(exercise.accessesingData3(), 5)
-    })
-  })
-
-  describe('#loopingData1()', function () {
-    it('returns array of dates', function () {
-      var result = [
-        '2015-01-06',
-        '2015-01-07',
-        '2015-01-08',
-        '2015-01-09',
-        '2015-01-10'
-      ]
-      assert.deepEqual(exercise.loopingData1(), result)
-    })
-  })
-  describe('#loopingData2()', function () {
-    it('returns object of candy names and price', function () {
-      var result = {
-        'Dark Chocolate Crunchies': 4.29,
-        'Mint Wafers': 1.09,
-        'Peppermint Poppers': 2.38,
-        'Peanut Butter Buttered Peanuts': 1.79,
-        'Berry Bites': 7.89,
-        'Caramel Twists': 0.5,
-        'Banana Bunches': 4.53
-      }
-      assert.deepEqual(exercise.loopingData2(), result)
-    })
-  })
-  describe('#loopingData3()', function () {
-    it('returns integer', function () {
-      assert.deepEqual(exercise.loopingData3(), 5)
-    })
-  })
-
-  describe('#challenge1()', function () {
-    it('returns revenue rounded to two numbers', function () {
-      assert.deepEqual(exercise.challenge1(), 14.35)
-    })
-  })
-})
+describe("Version 3 Exercises", ()=>{
+    describe("#getTotalItemSales", ()=>{
+        const sales = [{
+            itemId: 1,
+            quantity: 2
+        },{
+            itemId: 2,
+            quantity: 2
+        },{
+            itemId: 3,
+            quantity: 3
+        },{
+            itemId: 1,
+            quantity: 1
+        },{
+            itemId: 3,
+            quantity: 2
+        }];
+        it("returns the total item sales", ()=>{
+            assert.equal(exercise.getTotalItemSales(sales, 1), 3);
+            assert.equal(exercise.getTotalItemSales(sales, 2), 2);
+            assert.equal(exercise.getTotalItemSales(sales, 3), 5);
+        });
+    });
+    describe("#addTotalSalesToItems", ()=>{
+        const sales = [{
+            itemId: 1,
+            quantity: 2
+        },{
+            itemId: 2,
+            quantity: 2
+        },{
+            itemId: 3,
+            quantity: 3
+        },{
+            itemId: 1,
+            quantity: 1
+        },{
+            itemId: 3,
+            quantity: 2
+        }];
+        const items = [{
+            id: 1,
+            description: "Dark Chocolate Crunchies",
+            price: 4.29
+        },{
+            id: 2,
+            description: "Mint Wafers",
+            price: 1.09
+        },{
+            id: 3,
+            description: "Peppermint Poppers",
+            price: 2.38
+        }];
+        it("returns the total item sales", ()=>{
+            assert.deepEqual(exercise.addTotalSalesToItems(sales, items), [{
+                id: 1,
+                description: "Dark Chocolate Crunchies",
+                price: 4.29,
+                quantity: 3
+            },{
+                id: 2,
+                description: "Mint Wafers",
+                price: 1.09,
+                quantity: 2
+            },{
+                id: 3,
+                description: "Peppermint Poppers",
+                price: 2.38,
+                quantity: 5
+            }]);
+        });
+    });
+    describe("#addTotalValueToItems", ()=>{
+        const sales = [{
+            itemId: 1,
+            quantity: 2
+        },{
+            itemId: 2,
+            quantity: 2
+        },{
+            itemId: 3,
+            quantity: 3
+        },{
+            itemId: 1,
+            quantity: 1
+        },{
+            itemId: 3,
+            quantity: 2
+        }];
+        const items = [{
+            id: 1,
+            description: "Dark Chocolate Crunchies",
+            price: 4.29
+        },{
+            id: 2,
+            description: "Mint Wafers",
+            price: 1.09
+        },{
+            id: 3,
+            description: "Peppermint Poppers",
+            price: 2.38
+        }];
+        it("adds the total value to each transaction", ()=>{
+            assert.deepEqual(exercise.addTotalValueToItems(sales, items), [{
+                id: 1,
+                description: "Dark Chocolate Crunchies",
+                price: 4.29,
+                quantity: 3,
+                totalValue: 12.87
+            },{
+                id: 2,
+                description: "Mint Wafers",
+                price: 1.09,
+                quantity: 2,
+                totalValue: 2.18
+            },{
+                id: 3,
+                description: "Peppermint Poppers",
+                price: 2.38,
+                quantity: 5,
+                totalValue: 11.90
+            }]);
+        });
+    });
+});
