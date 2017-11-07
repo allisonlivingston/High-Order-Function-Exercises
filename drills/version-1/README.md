@@ -1,6 +1,6 @@
 ## Candy Shop
 
-You are trying to work with an API that returns transaction details on Candy Shop sales. Unfortunately, it returns it in a format that isn't consumable by your app. In `the exercise.js` file, write the functions to transform the response.
+You are trying to work with an API that returns transaction details on Candy Shop sales. Unfortunately, it returns it in a format that isn't consumable by your app. In the `exercise.js` file, write the functions to transform the response.
 
 ## Data Format
 
@@ -150,7 +150,8 @@ You are trying to work with an API that returns transaction details on Candy Sho
 
 ## Instructions
 
-1. Write a function called `candySalesToObject` that takes an array of single candy sales and converts it a candy sales object. For example, given the array `["Mint Wafers", "1.19", 2]`, return the object:
+* Write a function called `candySalesToObject` that takes an array of single candy sales and converts it a candy sales object. For example, given the array `["Mint Wafers", "1.19", 2]`, return the object:
+
 ```js
 {
     item: "Mint Wafers",
@@ -158,15 +159,20 @@ You are trying to work with an API that returns transaction details on Candy Sho
     quantity: 2
 }
 ```
+
 Note the data type on the price.
-1. Write a function called `salesDayToObject` that takes a date (`2015-01-06`) and a day of sales (eg.
+
+* Write a function called `salesDayToObject` that takes a date (`2015-01-06`) and a day of sales:
+
 ```js
 [
     ["Dark Chocolate Crunchies", "4.39", 1],
     ["Mint Wafers", "1.19", 3]
 ]
 ```
-) and returns an object formatted like the following:
+
+and returns an object formatted like the following:
+
 ```js
 {
     date: "2015-01-06",
@@ -181,8 +187,11 @@ Note the data type on the price.
     }]
 }
 ```
+
 Feel free to reuse your function from the previous example.
-1. Write a function called `allSalesToArray` that takes the complete, array-formatted response:
+
+* Write a function called `allSalesToArray` that takes the complete, array-formatted response:
+
 ```js
 {
     "2015-01-06": [
@@ -194,7 +203,9 @@ Feel free to reuse your function from the previous example.
     ...
 }
 ```
+
 and returns the complete array of objects:
+
 ```js
 [{
     date: "2015-01-06",
@@ -219,4 +230,5 @@ and returns the complete array of objects:
 ...
 }]
 ```
+
 Feel free to reuse your function from the previous example.
