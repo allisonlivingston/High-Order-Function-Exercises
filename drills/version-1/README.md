@@ -165,10 +165,12 @@ Note the data type on the price.
 * Write a function called `salesDayToObject` that takes a date (`2015-01-06`) and a day of sales:
 
 ```js
-[
-    ["Dark Chocolate Crunchies", "4.39", 1],
-    ["Mint Wafers", "1.19", 3]
-]
+{
+    "2015-01-06": [
+        ["Dark Chocolate Crunchies", "4.39", 1],
+        ["Mint Wafers", "1.19", 3]
+    ]
+}
 ```
 
 and returns an object formatted like the following:
