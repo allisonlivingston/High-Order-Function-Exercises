@@ -5,10 +5,10 @@ function candySalesToObject(candySalesArray){
                 object.item = item;
                 break;
             case 1:
-                object.price = +item;
+                object.price = item;
                 break;
             case 2:
-                object.quantity = +item;
+                object.quantity = item;
                 break;
         }
         return object;
