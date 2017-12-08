@@ -112,7 +112,7 @@ You are working with a candy shop API that returns `items` and `sales`. You need
 
 Note that the `id` property from the `item` should be removed. Feel free to reuse your function from the previous example.
 
-* Write a function called `getSalesByItemDescription` that takes the list of full transactions and an item description, and returns any matching sales. For example, if you give it the list of transactions and "Dark Chocolate Crunchies", you should return:
+* Write a function called `getTransactionsByItemDescription` that takes the list of full transactions and an item description, and returns any matching sales. For example, if you give it the list of transactions and "Dark Chocolate Crunchies", you should return:
 
 ```js
 [{
