@@ -1,51 +1,32 @@
 
-// let salesObject = {
-//   item: "",
-//   price: "",
-//   quantity: ""
-// }
 
-function candySalesToObject(array) {
-  let priceToNumber = parseFloat(array[1])
+function candySalesToObject(candyArray) {
 
-  return array.reduce(function(accumulator, currentValue, index) {
+  return candyArray.reduce(function(saleObject, currentItem, index) {
     switch(index) {
       case 0:
-        accumulator.item = currentValue
+        saleObject.item = currentItem
         break
       case 1:
-        accumulator.price = currentValue
+        saleObject.price = parseFloat(currentItem)
         break
       case 2:
-        accumulator.quantity = currentValue
+        saleObject.quantity = currentItem
         break
     }
-    return accumulator
+    return saleObject
   }, {})
 }
 
-
-
-
-  //
-  // array.map(function(item) {
-  //   return salesObject.item = array[0]
-  // })
-  // array.map(function(item) {
-  //   // return salesObject.item = array[0]
-  //   return salesObject.price = priceToNumber
-  //   // salesObject.quantity = array[2]
-  // })
-  // array.map(function(item) {
-  //   // return salesObject.item = array[0]
-  //   // return salesObject.price = priceToNumber
-  //   return salesObject.quantity = array[2]
-  // })
-  // console.log(salesObject)
-
-function salesDayToObject(date, day) {
-  return
+function salesDayToObject(date, daySales) {
+  return daySales[date].reduce(function(object, currentValue) {
+    object.date = date
+    object.sales.push(candySalesToObject(currentValue))
+    return object
+  }, {"sales": []})
 }
+
+
 
 
 
