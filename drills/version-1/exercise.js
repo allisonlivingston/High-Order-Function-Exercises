@@ -1,7 +1,4 @@
-
-
 function candySalesToObject(candyArray) {
-
   return candyArray.reduce(function(saleObject, currentItem, index) {
     switch(index) {
       case 0:
@@ -18,20 +15,20 @@ function candySalesToObject(candyArray) {
   }, {})
 }
 
-function salesDayToObject(date, daySales) {
-  return daySales[date].reduce(function(object, currentValue) {
-    object.date = date
+function salesDayToObject(currentDate, daySales) {
+  return daySales[currentDate].reduce(function(object, currentValue) {
+    object.date = currentDate
     object.sales.push(candySalesToObject(currentValue))
     return object
   }, {"sales": []})
 }
 
-
-
-
+function allSalesToArray(completeSalesObject) {
+  return Object.keys(completeSalesObject).map(currentDate => salesDayToObject(currentDate, completeSalesObject))
+}
 
 module.exports = {
 candySalesToObject,
     salesDayToObject,
-    // allSalesToArray
+    allSalesToArray
 };
