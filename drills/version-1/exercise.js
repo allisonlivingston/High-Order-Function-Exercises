@@ -1,5 +1,5 @@
 function candySalesToObject(candyArray) {
-  return candyArray.reduce(function(saleObject, currentItem, index) {
+  return candyArray.reduce((saleObject, currentItem, index) => {
     switch(index) {
       case 0:
         saleObject.item = currentItem
@@ -16,7 +16,7 @@ function candySalesToObject(candyArray) {
 }
 
 function salesDayToObject(currentDate, daySales) {
-  return daySales[currentDate].reduce(function(object, currentValue) {
+  return daySales[currentDate].reduce((object, currentValue) => {
     object.date = currentDate
     object.sales.push(candySalesToObject(currentValue))
     return object
