@@ -1,22 +1,20 @@
-function getItemById(items, itemId) {
-
-  return items.filter(function(object) {
+function getItemById(item, itemId) {
+  return item.filter(object => {
     return object.id == itemId
-  }) [0]
+  })[0]
 }
 
 function buildTransactions(sales, items) {
-  return sales.map(function(transaction) {
-  let newSalesArray = Object.assign(transaction, getItemById(items, transaction.itemId))
+  return sales.map(transaction => {
+    let newSalesArray = Object.assign(transaction, getItemById(items, transaction.itemId))
 
-  delete newSalesArray.id
-  return newSalesArray
+    delete newSalesArray.id
+    return newSalesArray
   })
-  console.log(sales);
 }
 
 function getTransactionsByItemDescription(transactions, description) {
-  return transactions.filter(function(sales) {
+  return transactions.filter(sales => {
     return sales.description == description
   })
 }
